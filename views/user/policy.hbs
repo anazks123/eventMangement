@@ -1,0 +1,25 @@
+<style>
+    body{
+        background-color: black;
+    }
+</style>
+<div class="container">
+<div class="row">
+    {{#each row}}
+    <div class="col sm-4">
+<div class="card" style="width: 22rem;">
+  <img src="https://im.hunt.in/cg/nagpur/City-Guide/event-management.jpg" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b><i>EventName</i></b> : {{this.policyname}}</h5>
+    <p class="card-text"> ID : {{this.pid}}</p>
+    <p class="card-text"><b>Discription</b> : {{this.dis}}</p>
+    <p class="card-text"><b>Monthly Payment </b>: {{this.mnthlypay}}</p>
+     <p class="card-text">Type : {{this.ptype}}</p>
+    {{!-- <a href="/users/showP/{{this.id}} " class="btn btn-primary">Show Policies</a> --}}
+    <a href="/users/booknow/{{this.cid}} " class="btn btn-outline-primary">Book Now</a>
+  </div>
+</div>
+    </div>
+    {{/each}}
+</div>
+</div>
