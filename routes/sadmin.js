@@ -90,9 +90,19 @@ router.get('/unblock/:id', function(req, res, next) {
         
   res.redirect('/sadmin/home')
     }
-  })
-
-  
+  })  
+});
+router.get('/users', function(req, res, next) {
+  var id = req.params.id;
+  var sql ="select * from rider";
+con.query(sql,[id],(err,row)=>{
+  if(err){
+    console.log(err)
+  }else{
+    var user = req.session.user;
+    res.render('sadmin/users',{users:row,user})
+  }
+})
 });
 router.post('/login',(req,res)=>{
     var mail = "admin@123.com"

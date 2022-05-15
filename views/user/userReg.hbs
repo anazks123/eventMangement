@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
+
   <style>
    @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
 * {
@@ -17,7 +17,7 @@ a {
   color: #666;
   text-decoration: none; }
   a:hover {
-    color: #4FDA8C; }
+    color: #ce3030; }
 
 input {
   font: 16px/26px "Raleway", sans-serif; }
@@ -69,13 +69,13 @@ body {
   .form-wrap form .button {
     width: 100%;
     padding: .8em 0 10px .8em;
-    background-color: #28A55F;
+    background-color: #ce3030;
     border: none;
     color: #fff;
     cursor: pointer;
     text-transform: uppercase; }
     .form-wrap form .button:hover {
-      background-color: #4FDA8C; }
+      background-color: #ce3030; }
   .form-wrap form .checkbox {
     visibility: hidden;
     padding: 20px;
@@ -107,7 +107,7 @@ body {
       background-color: transparent;
       top: 4px;
       left: -10px;
-      border: 3px solid #28A55F;
+      border: 3px solid #ce3030;
       border-top: none;
       border-right: none;
       -webkit-transform: rotate(-45deg);
@@ -120,38 +120,64 @@ body {
     .form-wrap .help-text p {
       text-align: center;
       font-size: 14px; }
-
+      .tabs{
+       
+        padding-left: 400px;
+        width: 500px;
+      }
+  .div{
+     
+      background-color: white;
+  }
+  .active{
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 250px;
+    padding: 20px;
+    border: 2px solid black;
+  }
+  .button{
+    width: 90%;
+    background-color: green;
+    padding: 10px;
+  }
 </style>
     <h4 style="text-align: center; color:red">
       {{message}}
     </h4>
-<div class="form+3+3-wrap">
+<div class="container div">
+  <div class="form+3+3-wrap p-4">
 		<div class="tabs">
-			<h3 class="signup-tab"><a class="active" href="#">Sign Up</a></h3>
-			<h3 class="login-tab"><a href="/users/userLogin">Login</a></h3>
+			{{!-- <h3 class="signup-tab"><a class="active" href="#">Sign Up</a></h3> --}}
+			<h3 class="login-tab" style="border:2px solid green;width:100%;background-color:green;color:rgb(226, 216, 216)"><a href="/users/userLogin"><b><i>Login</i></b></a></h3>
      
 		</div><!--.tabs-->
    
-		<div class="tabs-content">
+		<div class="tabs">
 			<div id="signup-tab-content" class="active">
       
 				<form class="signup-form" action="/users/userReg" method="post">
 					<input type="email" name="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
+          <br>
+          <br>
 					<input type="text" name="username" class="input" id="user_name" autocomplete="off" placeholder=" name">
+          <br>
+          <br>
           <input type="number" name="mobile" class="input" id="user_name" autocomplete="off" placeholder="mobile">
-
+          <br>
+          <br>
 					<input type="password" name="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+          <br>
+          <br>
           <input type="password" name='repassword2' class="input" id="user_pass2" autocomplete="off" placeholder="retype Password">
-					<input type="submit" class="button" onclick="myFunction()" value="Sign Up">
+  <br>
+  <br>
+          <input type="submit" class="button" onclick="myFunction()" value="Sign Up">
 				</form><!--.login-form-->
 				<div class="help-text">
-					<p>By signing up, you agree to our</p>
-					<p><a href="#">Terms of service</a></p>
          <p><a href="/">Back to home</a></p>
 				</div><!--.help-text-->
 			</div><!--.signup-tab-content-->
 
+</div>
 			
   
-</body>
-</html>
